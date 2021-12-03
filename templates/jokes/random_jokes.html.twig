@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+
+    <p class="category"></p>
+
+    <p class="random">Question</p>
+
+    <button onclick="answer()">Réponse</button>
+    <p class="response"></p>
+
+    <a href="{{ path('jokes_random') }}"><button>Nouvelle blague</button></a>
+
+    <script defer type="text/javascript" src="{{ asset('js/random.js') }}"></script>
+
+{% endblock %}
+
