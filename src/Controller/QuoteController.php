@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Category;
 use App\Entity\Quote;
+use App\Form\CategoryType;
 use App\Form\QuoteType;
+use Doctrine\ORM\EntityManager;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,14 +28,14 @@ class QuoteController extends AbstractController
         $quoteForm->handleRequest($request);
 
         if ($quoteForm->isSubmitted() && $quoteForm->isValid()) {
-            $entityManager = $this->$managerRegistry->getManager();
+            $entityManager = $managerRegistry->getManager();
             $entityManager->persist($quote);
             $entityManager->flush();
 
             $this->addFlash('success', "L'anecdote a bien été ajoutée");
 
             // Redirecting the user to be sure that the adding was done once
-            return $this->redirectToRoute('add_quote');
+            return $this->redirectToRoute('quote_add');
         }
 
 
@@ -53,14 +55,14 @@ class QuoteController extends AbstractController
 
         // if the form is valid and submitted, we'll save datas, if it's not, we'll render a new form
         if ($categoryForm->isSubmitted() && $categoryForm->isValid()) {
-            $entityManager = $this->$managerRegistry->getManager();
+            $entityManager = $managerRegistry->getManager();
             $entityManager->persist($category);
             $entityManager->flush();
 
             $this->addFlash('success', "La catégorie a bien été ajoutée");
 
             // Redirecting the user to be sure that the adding was done once
-            return $this->redirectToRoute('category_add');
+            return $this->redirectToRoute('quote_category_add');
         }
 
         return $this->render('quotes/add_categories.html.twig', [
