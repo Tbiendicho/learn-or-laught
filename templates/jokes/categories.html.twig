@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CategoryController!{% endblock %}
+{% block title %}Catégories de blagues{% endblock %}
 
 {% block body %}
 
 <h1>Liste des catégories</h1>
 
 <ul>
-    <button onclick="categories.showList(value)" value = "global" class="global"><li>Classique</li></button>
-    <button onclick="categories.showList(value)" value = "dev" class="dev"><li>Geek</li></button>
-    <button onclick="categories.showList(value)" value = "dark" class="dark"><li>Humour noir</li></button>
-    <button onclick="categories.showList(value)" value = "limit" class="limit"><li>Limite</li></button>
-    <button onclick="categories.showList(value)" value = "beauf" class="beauf"><li>Beauf</li></button>
-    <button onclick="categories.showList(value)" value = "blondes" class="blondes"><li>Blondes</li></button>
+    <button onclick="categories.showCategories(value)" value = "global" class="global"><li>Classique</li></button>
+    <button onclick="categories.showCategories(value)" value = "dev" class="dev"><li>Geek</li></button>
+    <button onclick="categories.showCategories(value)" value = "dark" class="dark"><li>Humour noir</li></button>
+    <button onclick="categories.showCategories(value)" value = "limit" class="limit"><li>Limite</li></button>
+    <button onclick="categories.showCategories(value)" value = "beauf" class="beauf"><li>Beauf</li></button>
+    <button onclick="categories.showCategories(value)" value = "blondes" class="blondes"><li>Blondes</li></button>
 </ul>
 
 <p class="category"></p>
@@ -20,7 +20,7 @@
 <button onclick="categories.answer()">Réponse</button>
 <p class="response"></p>
 
-<button onclick="categories.showList(value)" value ="" class="nextJokeByCategory">Blague suivante</button>
+<button onclick="categories.showCategories(value)" value ="" class="nextJokeByCategory">Blague suivante</button>
 
 <script defer type="text/javascript" src="{{ asset('js/categories.js') }}"></script>
 
