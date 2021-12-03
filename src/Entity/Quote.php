@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use App\Repository\QuoteRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
@@ -40,6 +39,11 @@ class Quote
      * @ORM\Column(type="text", nullable=true)
      */
     private $source;
+
+    public function __toString()
+    {
+        return $this->category;
+    }
 
     public function getId(): ?int
     {

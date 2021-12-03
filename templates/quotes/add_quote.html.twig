@@ -6,10 +6,10 @@
 
     {{ form_start(quote_form) }}
 
+{{ form_row(quote_form.title) }}
 {{ form_row(quote_form.text) }}
-{{ form_row(quote_form.picture) }}
+{{ form_row(quote_form.source) }}
 {{ form_row(quote_form.category) }}
-{{ form_row(quote_form.liked) }}
 
 <button type="submit">Ajouter</button>
 
