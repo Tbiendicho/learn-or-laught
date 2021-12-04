@@ -12,6 +12,9 @@ const categories = {
 
     showCategories: function(category) {
 
+        let hideCategory = document.querySelector('.category');
+        hideCategory.style="";
+
         if (category == "") {
             category = categories.result[1][1]
         }

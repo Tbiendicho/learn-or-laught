@@ -1,27 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Catégories de blagues{% endblock %}
+{% block title %}Catégories de blagues
+{% endblock %}
 
 {% block body %}
 
-<h1>Liste des catégories</h1>
+	<div class="page">
 
-<ul>
-    <button onclick="categories.showCategories(value)" value = "global" class="global"><li>Classique</li></button>
-    <button onclick="categories.showCategories(value)" value = "dev" class="dev"><li>Geek</li></button>
-    <button onclick="categories.showCategories(value)" value = "dark" class="dark"><li>Humour noir</li></button>
-    <button onclick="categories.showCategories(value)" value = "limit" class="limit"><li>Limite</li></button>
-    <button onclick="categories.showCategories(value)" value = "beauf" class="beauf"><li>Beauf</li></button>
-    <button onclick="categories.showCategories(value)" value = "blondes" class="blondes"><li>Blondes</li></button>
-</ul>
+		<div class="title">
+			<h1 class="font-title">Liste des catégories</h1>
+		</div>
 
-<p class="category"></p>
-<p class="random"></p>
-<button onclick="categories.answer()">Réponse</button>
-<p class="response"></p>
+		<ul class="categories-list">
+			<button class="btn-category" onclick="categories.showCategories(value)" value="global" class="global">
+				<li>Classique</li>
+			</button>
+			<button class="btn-category" onclick="categories.showCategories(value)" value="dev" class="dev">
+				<li>Geek</li>
+			</button>
+			<button class="btn-category" onclick="categories.showCategories(value)" value="dark" class="dark">
+				<li>Humour noir</li>
+			</button>
+			<button class="btn-category" onclick="categories.showCategories(value)" value="limit" class="limit">
+				<li>Limite</li>
+			</button>
+			<button class="btn-category" onclick="categories.showCategories(value)" value="beauf" class="beauf">
+				<li>Beauf</li>
+			</button>
+			<button class="btn-category" onclick="categories.showCategories(value)" value="blondes" class="blondes">
+				<li>Blondes</li>
+			</button>
+		</ul>
 
-<button onclick="categories.showCategories(value)" value ="" class="nextJokeByCategory">Blague suivante</button>
+		<div class="container random-block col-4">
 
-<script defer type="text/javascript" src="{{ asset('js/categories.js') }}"></script>
+			<div style="visibility: hidden" class="category d-inline-flex p-2">
+				<p class="category"></p>
+			</div>
+
+			<p class="random white-text">Sélectionner une catégorie</p>
+
+			<button class="btn btn-light" onclick="categories.answer()">Réponse</button>
+			<p class="response white-text"></p>
+
+		</div>
+
+		<div>
+
+			<button class="btn new-joke-btn nextJokeByCategory" onclick="categories.showCategories(value)" value="">Nouvelle blague</button>
+
+		</div>
+
+	</div>
+
+	<script defer type="text/javascript" src="{{ asset('js/categories.js') }}"></script>
 
 {% endblock %}
