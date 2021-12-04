@@ -6,7 +6,6 @@ use App\Entity\Category;
 use App\Entity\Quote;
 use App\Form\CategoryType;
 use App\Form\QuoteType;
-use Doctrine\ORM\EntityManager;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;

@@ -1,19 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Blague aléatoire{% endblock %}
+{% block title %}Blague aléatoire
+{% endblock %}
 
 {% block body %}
 
-    <p class="category"></p>
 
-    <p class="random">Question</p>
+	<div class="page">
 
-    <button onclick="answer()">Réponse</button>
-    <p class="response"></p>
+		<div class="title">
+			<h1 class="font-title">Blague aléatoire</h1>
+		</div>
 
-    <a href="{{ path('jokes_random') }}"><button>Nouvelle blague</button></a>
+		<div class="container random-block col-4">
 
-    <script defer type="text/javascript" src="{{ asset('js/random.js') }}"></script>
+			<div class="category d-inline-flex p-2">
+				<p class="category"></p>
+			</div>
+
+			<p class="random white-text">Question</p>
+
+			<button class="btn btn-light" onclick="answer()">Réponse</button>
+			<p class="response white-text"></p>
+
+		</div>
+
+		<div>
+
+			<a href="{{ path('jokes_random') }}">
+				<button class="btn new-joke-btn">Nouvelle blague</button>
+			</a>
+
+		</div>
+
+	</div>
+
+	<script defer type="text/javascript" src="{{ asset('js/random.js') }}"></script>
 
 {% endblock %}
-
