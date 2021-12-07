@@ -76,9 +76,7 @@ function showCategory(selectedCategory) {
         // adding a new block
         var blockList = document.querySelector('.block-list');
         var newBlock = document.createElement('div');
-        newBlock.classList.add('container');
-        newBlock.classList.add('block');
-        newBlock.classList.add('col-4');
+        newBlock.classList.add('block', 'col-10', 'col-lg-4', 'mx-auto');
         blockList.append(newBlock);
 
         // adding a new category

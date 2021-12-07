@@ -45,7 +45,9 @@ body {
     color: white;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 2em;
-    border-radius: 25% 10%;
+    border-radius: 10px;
+    width: 30%;
+    justify-content: center;
 }
 
 .page {
@@ -63,7 +65,7 @@ body {
 
 .btn-category {
     margin: 2em;
-    width: 10%;
+    width: 20%;
     list-style-type: none;
     background-color: #F67280; 
     border: 0.1em white solid;
@@ -79,5 +81,19 @@ body {
 
 .categories-list {
     text-align: center;
+}
+
+@media (max-width: 992px) { 
+    .page, .btn, .category, .text, .title-text{
+        font-size: 1.5em;
+    }
+    .btn-category {
+        width: 30%;
+        font-size: 1.5em;
+    }
+
+    .btn {
+        padding: 0.1em 0.5em;
+    }
 }
 
