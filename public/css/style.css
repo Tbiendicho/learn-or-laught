@@ -4,8 +4,9 @@ body {
     height: 100vh;
 }
 
-.white-text {
+.title-text {
     font-family: 'Roboto', sans-serif;
+    color: #07689F;
 }
 
 .random-block, .block {
@@ -72,7 +73,7 @@ body {
     font-size: 1.3em;
 }
 
-.btn-category:hover {
+.btn-category:hover, .btn:hover {
     background-color: #11D3BC;
 }
 

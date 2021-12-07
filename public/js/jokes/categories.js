@@ -5,15 +5,15 @@ const categories = {
     result: [],
 
     //we'll catch the answer in the result array and put it in the DOM
-    answer: function() {
+    answer: function () {
         let currentResponse = document.querySelector('.response');
         currentResponse.textContent = categories.result[3][1];
     },
 
-    showCategories: function(category) {
+    showCategories: function (category) {
 
         let hideCategory = document.querySelector('.category');
-        hideCategory.style="";
+        hideCategory.style = "";
 
         if (category == "") {
             category = categories.result[1][1]
@@ -41,7 +41,7 @@ const categories = {
             .then(function (jsonData) { // we definitly catch the json datas
 
                 for (let currentLine in jsonData) {
-                    
+
                     categories.result.push([currentLine, jsonData[currentLine]]);
                 }
 
@@ -52,6 +52,6 @@ const categories = {
                 // adding the category tag to the html
                 let currentJokeCategory = document.querySelector('.category');
                 currentJokeCategory.textContent = category;
-            });   
+            });
     },
 }
