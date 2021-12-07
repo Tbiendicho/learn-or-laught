@@ -8,7 +8,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.random-block {
+.random-block, .block {
     background-color:#C9D6DF;
     border-radius: 30px;
     margin-top: 3em;

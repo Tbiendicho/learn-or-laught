@@ -2,12 +2,6 @@ let apiUrl = 'http://localhost:8080/api/v1/quote'
 
 let result = [];
 
-function answer() {
-    console.log(result);
-    let currentResponse = document.querySelector('.response');
-    currentResponse.textContent = result[3][1];
-}
-
 function load() {
 
     let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2Mzg4NjQ2NTIsInJvbGVzIjpbIlJPTEVfQ0FUQUxPR19NQU5BR0VSIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYWRtaW5AYWRtaW4uY29tIn0.QwND0lQ7hex1o0DUDQxsNrYfQNT67E3JGd8j8-4XmJ-3IXd5rwLUKnATGGbCIsW7chHAmNkvXDaQrBwg2Sc6ZEMEY70HFTj6ujjWNRnQNa-EOtDs1jZIeYuRtOK0BV9IWXgCy0ikX_IHeQEXnoL9cPLV1QxFY4IYFTRkQPtK86Kg2i9ATzEJhm4ybA5lWHPB_M94RCy_OZWApSKQSX-XzDtHnNF0tdvgJhMiCSUO6TjTXIcMinPL6S2Q0tYBxVw4M8-X7vQhvUVeHLNikxfDyFF1SlIpP6sziDR1k_vOIB8nE5wyU7vDcnOsBXKLApw8JZUoYn0V8R3nAgxybsroPQ"

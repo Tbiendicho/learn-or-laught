@@ -28,6 +28,16 @@ class QuoteController extends AbstractController
     }
 
     /**
+     * @Route("/categories", name="_categories")
+     */
+    public function browseCategories(): Response
+    {
+        return $this->render('quotes/browse_quote_by_category.html.twig', [
+            'controller_name' => 'QuoteController',
+        ]);
+    }
+
+    /**
      * @Route("/add", name="_add")
      */
     public function addQuote(Request $request, ManagerRegistry $managerRegistry): Response
