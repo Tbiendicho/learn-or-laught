@@ -28,9 +28,7 @@ function load() {
                 // adding a new block
                 var blockList = document.querySelector('.block-list');
                 var newBlock = document.createElement('div');
-                newBlock.classList.add('container');
-                newBlock.classList.add('block');
-                newBlock.classList.add('col-4');
+                newBlock.classList.add('block', 'col-10', 'col-lg-4', 'mx-auto');
                 blockList.append(newBlock);
 
                 // adding a new category
@@ -49,7 +47,7 @@ function load() {
 
                 // adding a new quote text
                 var newQuote = document.createElement('p');
-                newQuote.classList.add('white-text');
+                newQuote.classList.add('text');
                 newQuote.textContent = currentQuote[1].text;
                 newBlock.append(newQuote);
 
