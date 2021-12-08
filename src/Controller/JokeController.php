@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class JokeController extends AbstractController
 {
     /**
-     * @Route("", name="_category")
+     * @Route("/categories", name="_categories")
      */
     public function browseCategories(): Response
     {
@@ -26,7 +26,7 @@ class JokeController extends AbstractController
      */
     public function readRandomJoke(): Response
     {
-        return $this->render('jokes/random_jokes.html.twig', [
+        return $this->render('jokes/random.html.twig', [
             'controller_name' => 'MainController',
         ]);
     }
