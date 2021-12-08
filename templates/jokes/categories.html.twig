@@ -8,10 +8,10 @@
 	<div class="page">
 
 		<div class="title">
-			<h1 class="font-title">Liste des catégories</h1>
+			<h1 class="font-title">Catégories de blagues</h1>
 		</div>
 
-		<ul class="categories-list">
+		<ul class="categories-list col-lg-8 mx-auto">
 			<button class="btn-category" onclick="categories.showCategories(value)" value="global" class="global">
 				<li>Classique</li>
 			</button>
@@ -32,24 +32,21 @@
 			</button>
 		</ul>
 
-		<div class="random-block col-10 mx-auto">
+		<div class="block col-lg-4 col-10 mx-auto mt-0">
 
 			<div style="visibility: hidden" class="category d-inline-flex p-2">
 				<p class="category"></p>
 			</div>
 
-			<p class="random text">Sélectionner une catégorie</p>
+			<p class="random text"></p>
 
 			<button class="btn btn-light" onclick="categories.answer()">Réponse</button>
 			<p class="response text"></p>
 
 		</div>
 
-		<div>
+		<button class="btn new-joke-btn nextJokeByCategory" onclick="categories.showCategories(value)" value="">Nouvelle blague</button>
 
-			<button class="btn new-joke-btn nextJokeByCategory" onclick="categories.showCategories(value)" value="">Nouvelle blague</button>
-
-		</div>
 
 	</div>
 
