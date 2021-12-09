@@ -1,15 +1,15 @@
 let apiUrl = 'http://localhost:8080/api/v1/quote'
 
 let result = [];
+let categoriesResult = [];
 let resultByCategory = [];
+let lastCategory = "";
 
 function answer() {
     console.log(result);
     let currentResponse = document.querySelector('.response');
     currentResponse.textContent = result[3][1];
 }
-
-
 
 function load() {
 
@@ -30,34 +30,43 @@ function load() {
         .then(function (jsonData) { // we definitly catch the json datas
 
             for (let currentLine in jsonData) {
-
-                // we only keep unique values of categories
-                var currentCategory = jsonData[currentLine].category.name;
-                if (result.indexOf(currentCategory) === -1) {
-                    result.push(currentCategory);
-                }
+                result.push([currentLine, jsonData[currentLine]]);
             }
 
-            for (var currentCategory of result) {
+            for (var currentQuote of result) {
 
-                var categoriesList = document.querySelector('.categories-list');
+                // we'll just add unique categories
+                if (categoriesResult.includes(currentQuote[1].category.name) === false) {
 
-                var newCategoryButton = document.createElement('button');
-                newCategoryButton.setAttribute("value", currentCategory);
-                newCategoryButton.setAttribute("onclick", "showCategory(value)");
-                newCategoryButton.classList.add("btn-category");
-                newCategoryButton.setAttribute('value', currentCategory);
+                    var categoriesList = document.querySelector('.categories-list');
 
-                var newCategory = document.createElement('li');
-                newCategory.textContent = currentCategory;
-                newCategoryButton.append(newCategory);
-                categoriesList.append(newCategoryButton);
+                    var newCategoryButton = document.createElement('button');
+                    newCategoryButton.setAttribute("value", currentQuote[1].category.name);
+                    newCategoryButton.setAttribute("onclick", "showCategory(value)");
+                    newCategoryButton.classList.add("btn-category");
+                    newCategoryButton.setAttribute('value', currentQuote[1].category.name);
+
+                    var newCategory = document.createElement('li');
+                    newCategory.textContent = currentQuote[1].category.name;
+                    newCategoryButton.append(newCategory);
+                    categoriesList.append(newCategoryButton);
+                }
+
+                categoriesResult.push(currentQuote[1].category.name);
             }
         });
 }
 
 function showCategory(selectedCategory) {
 
+    for (var currentQuote of resultByCategory) {
+
+        //removing old blocks of other categories
+        var page = document.querySelector('.page');
+        var blockList = document.querySelector('.block-list');
+        page.removeChild(blockList);
+    }
+    
     resultByCategory = [];
 
     for (var currentQuote of result) {
@@ -68,12 +77,8 @@ function showCategory(selectedCategory) {
 
     for (var currentQuote of resultByCategory) {
 
-        //removing old blocks
-        var page = document.querySelector('.page');
-        var blockList = document.querySelector('.block-list');
-        page.removeChild(blockList);
-
         // creating blockList
+        var page = document.querySelector('.page');
         var blockList = document.createElement('div');
         blockList.classList.add('block-list');
         page.append(blockList);
@@ -117,6 +122,8 @@ function showCategory(selectedCategory) {
         newLink.append(newButton);
 
     }
+    
+    lastCategory = selectedCategory;
 }
 
 document.addEventListener('DOMContentLoaded', load());
