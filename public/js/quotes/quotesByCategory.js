@@ -30,21 +30,26 @@ function load() {
         .then(function (jsonData) { // we definitly catch the json datas
 
             for (let currentLine in jsonData) {
-                result.push([currentLine, jsonData[currentLine]]);
+
+                // we only keep unique values of categories
+                var currentCategory = jsonData[currentLine].category.name;
+                if (result.indexOf(currentCategory) === -1) {
+                    result.push(currentCategory);
+                }
             }
 
-            for (var currentQuote of result) {
+            for (var currentCategory of result) {
 
                 var categoriesList = document.querySelector('.categories-list');
 
                 var newCategoryButton = document.createElement('button');
-                newCategoryButton.setAttribute("value", currentQuote[1].category.name);
+                newCategoryButton.setAttribute("value", currentCategory);
                 newCategoryButton.setAttribute("onclick", "showCategory(value)");
                 newCategoryButton.classList.add("btn-category");
-                newCategoryButton.setAttribute('value', currentQuote[1].category.name);
+                newCategoryButton.setAttribute('value', currentCategory);
 
                 var newCategory = document.createElement('li');
-                newCategory.textContent = currentQuote[1].category.name;
+                newCategory.textContent = currentCategory;
                 newCategoryButton.append(newCategory);
                 categoriesList.append(newCategoryButton);
             }
