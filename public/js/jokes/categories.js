@@ -1,6 +1,6 @@
 const categories = {
 
-    apiUrl: "https://www.blagues-api.fr/api/type/",
+    apiUrl: "https://thingproxy.freeboard.io/fetch/https://www.blagues-api.fr/api/type/",
 
     result: [],
 
