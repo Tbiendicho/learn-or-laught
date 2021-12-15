@@ -1,4 +1,4 @@
-let apiUrl = 'https://www.blagues-api.fr/api/'
+let apiUrl = 'https://thingproxy.freeboard.io/fetch/https://www.blagues-api.fr/api/'
 
 let result = [];
 
