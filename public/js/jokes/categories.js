@@ -1,4 +1,4 @@
-const categories = {
+const jokesCategories = {
 
     apiUrl: "https://thingproxy.freeboard.io/fetch/https://www.blagues-api.fr/api/type/",
 
