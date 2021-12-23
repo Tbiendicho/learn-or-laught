@@ -1,6 +1,6 @@
 const jokesRandom = {
 
-    apiUrl: 'https://thingproxy.freeboard.io/fetch/https://www.blagues-api.fr/api/',
+    apiUrl: 'https://cors.eu.org/https://www.blagues-api.fr/api/',
 
     result: [],
 
@@ -44,4 +44,4 @@ const jokesRandom = {
 
 }
 
-document.addEventListener('DOMContentLoaded', load());
+document.addEventListener('DOMContentLoaded', jokesRandom.load());

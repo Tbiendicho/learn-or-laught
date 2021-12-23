@@ -1,6 +1,6 @@
 const quotesList = {
 
-    apiUrl: 'http://localhost:8080/api/v1/quote',
+    apiUrl: 'https://apilol.thomas-biendicho.fr/api/v1/quote',
 
     result: [],
 
@@ -70,4 +70,4 @@ const quotesList = {
 
 }
 
-document.addEventListener('DOMContentLoaded', load());
+document.addEventListener('DOMContentLoaded', quotesList.load());

@@ -1,6 +1,6 @@
 const quotesByCategory = {
 
-    apiUrl: 'http://localhost:8080/api/v1/quote',
+    apiUrl: 'https://apilol.thomas-biendicho.fr/api/v1/quote',
 
     result: [],
     categoriesResult: [],
@@ -37,13 +37,13 @@ const quotesByCategory = {
                 for (var currentQuote of quotesByCategory.result) {
 
                     // we'll just add unique categories
-                    if (categoriesResult.includes(currentQuote[1].category.name) === false) {
+                    if (quotesByCategory.categoriesResult.includes(currentQuote[1].category.name) === false) {
 
                         var categoriesList = document.querySelector('.categories-list');
 
                         var newCategoryButton = document.createElement('button');
                         newCategoryButton.setAttribute("value", currentQuote[1].category.name);
-                        newCategoryButton.setAttribute("onclick", "showCategory(value)");
+                        newCategoryButton.setAttribute("onclick", "quotesByCategory.showCategory(value)");
                         newCategoryButton.classList.add("btn-category");
                         newCategoryButton.setAttribute('value', currentQuote[1].category.name);
 
@@ -129,4 +129,4 @@ const quotesByCategory = {
 
 }
 
-document.addEventListener('DOMContentLoaded', load());
+document.addEventListener('DOMContentLoaded', quotesByCategory.load());

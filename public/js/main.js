@@ -29,11 +29,11 @@ const main = {
 
         let linkForCategories = document.createElement('a');
         linkForCategories.classList.add('w-75');
-        linkForCategories.href = "http://localhost:8000/" + value + "/categories"
+        linkForCategories.href = "https://lol.thomas-biendicho.fr/" + value + "/categories"
 
         let linkForRandom = document.createElement('a');
         linkForRandom.classList.add('w-75');
-        linkForRandom.href = "http://localhost:8000/" + value + "/random"
+        linkForRandom.href = "https://lol.thomas-biendicho.fr/" + value + "/random"
 
         block.append(linkForCategories, linkForRandom);
         linkForCategories.append(categoryButtonYes);
