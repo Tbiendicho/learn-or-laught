@@ -1,13 +1,13 @@
-const categories = {
+const jokesCategories = {
 
-    apiUrl: "https://thingproxy.freeboard.io/fetch/https://www.blagues-api.fr/api/type/",
+    apiUrl: "https://cors.eu.org/https://www.blagues-api.fr/api/type/",
 
     result: [],
 
     //we'll catch the answer in the result array and put it in the DOM
     answer: function () {
         let currentResponse = document.querySelector('.response');
-        currentResponse.textContent = categories.result[3][1];
+        currentResponse.textContent = jokesCategories.result[3][1];
     },
 
     showCategories: function (category) {
@@ -16,10 +16,10 @@ const categories = {
         hideCategory.style = "";
 
         if (category == "") {
-            category = categories.result[1][1]
+            category = jokesCategories.result[1][1]
         }
 
-        categories.result = [];
+        jokesCategories.result = [];
         let currentResponse = document.querySelector('.response');
         currentResponse.textContent = "";
 
@@ -34,7 +34,7 @@ const categories = {
             },
         };
 
-        fetch(categories.apiUrl + category + '/random', myInit) // we send the request
+        fetch(jokesCategories.apiUrl + category + '/random', myInit) // we send the request
             .then(function (data) { // we recieve a json response
                 return data.json(); // we catch the json and send a new promise
             })
@@ -42,12 +42,12 @@ const categories = {
 
                 for (let currentLine in jsonData) {
 
-                    categories.result.push([currentLine, jsonData[currentLine]]);
+                    jokesCategories.result.push([currentLine, jsonData[currentLine]]);
                 }
 
                 // adding the question to the html
                 let currentRandomJoke = document.querySelector('.random');
-                currentRandomJoke.textContent = categories.result[2][1];
+                currentRandomJoke.textContent = jokesCategories.result[2][1];
 
                 // adding the category tag to the html
                 let currentJokeCategory = document.querySelector('.category');
